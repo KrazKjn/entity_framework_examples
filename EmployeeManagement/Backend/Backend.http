@@ -1,0 +1,10 @@
+@Backend_HostAddress = http://localhost:5014
+
+GET {{Backend_HostAddress}}/EmployeeC/
+Accept: application/json
+
+###
+GET {{Backend_HostAddress}}/DepartmentC/
+Accept: application/json
+
+###

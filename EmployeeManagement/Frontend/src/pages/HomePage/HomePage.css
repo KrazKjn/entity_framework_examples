@@ -1,0 +1,17 @@
+/* Sidebar Styling */
+.sidebar {
+    height: 100vh; /* Full viewport height */
+    position: sticky;
+    top: 0; /* Ensures the sidebar stays in place while scrolling */
+    padding: 20px;
+    border-right: 1px solid #ddd; /* Optional: Add a divider */
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 20px; /* Adds space around the content area */
+}
+
+.content-area {
+    margin: 10px;
+}
