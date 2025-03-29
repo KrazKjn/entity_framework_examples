@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import ResizableBackground from '../../components/ResizableBackground/ResizableBackground';
 import GitHubLink from '../../components/GitHubLink/GitHubLink';
+import ResizableBackground from '../../components/ResizableBackground/ResizableBackground';
+import '../../styles/global.css';
 
 const AboutPage = () => {
     return (
@@ -12,7 +13,7 @@ const AboutPage = () => {
                 <title>Employee Management System</title>
             </Helmet>
             <h1>Employee Management System</h1>
-            <p>The Employee Manager Solution is a example application designed to efficiently manage employees and departments. The backend leverages Entity Framework, an object-relational mapper (ORM) for .NET, to streamline database operations. It provides robust services for CRUD (Create, Read, Update, Delete) operations on employee and department entities, ensuring data integrity and scalability.
+            <p>The Employee Management System Solution is a example application designed to efficiently manage employees and departments. The backend leverages Entity Framework, an object-relational mapper (ORM) for .NET, to streamline database operations. It provides robust services for CRUD (Create, Read, Update, Delete) operations on employee and department entities, ensuring data integrity and scalability.
             </p>
             <p>On the frontend, the solution utilizes React, a modern JavaScript library, to deliver a responsive and dynamic user interface. React components are employed to create intuitive pages where users can manage employees and departments. These components interact seamlessly with the backend services through RESTful APIs, enabling data-driven functionality.
             </p>

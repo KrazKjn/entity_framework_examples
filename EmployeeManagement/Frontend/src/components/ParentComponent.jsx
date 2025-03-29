@@ -3,14 +3,23 @@ import EmployeeForm from "./EmployeeForm"; // Import EmployeeForm component
 import DepartmentForm from "./DepartmentForm"; // Import DepartmentForm component
 import EmployeesPage from "../pages/EmployeesPage/EmployeesPage"; // Import EmployeesPage component
 import DepartmentsPage from "../pages/DepartmentsPage/DepartmentsPage"; // Import DepartmentsPage component
+import MessageBox from "./MessageBox/MessageBox"; // Assuming you saved the component as MessageBox.js
 
 const ParentComponent = () => {
     const [selectedEntity, setSelectedEntity] = useState(null); // Store selected entity (Department/Employee)
     const [entityType, setEntityType] = useState("Employee"); // Toggle between Employee or Department
     const [refreshKey, setRefreshKey] = React.useState(0);
+    const [result, setResult] = useState(null);
+    const [showModal, setShowModal] = useState(false);
 
+    const handleClose = (selectedValue) => {
+        setResult(selectedValue); // Capture the result of the button clicked
+        setShowModal(false); // Close the modal
+      };
+    
     const handleSuccess = () => {
-        alert(`${entityType} successfully saved!`);
+        //alert(`${entityType} successfully saved!`);
+        setShowModal(true); // Show the modal
         setSelectedEntity(null); // Clear selected entity after successful save
         // Trigger refresh by updating the refreshKey state
         setRefreshKey((prevKey) => prevKey + 1);
@@ -65,6 +74,18 @@ const ParentComponent = () => {
                     Manage Departments
                 </button>
             </div>
+            {showModal && (
+                <MessageBox
+                    title="Save Confirmation"
+                    message={`${entityType} successfully saved!`}
+                    buttons={[
+                        { label: "OK", value: "ok" }
+                    ]}
+                    onClose={handleClose}
+                    defaultButton="ok"
+                    timeout={5000} // Example: auto-closes in 5 seconds
+                />
+            )}
 
             {/* Render dynamic form based on entityType */}
             {renderForm()}

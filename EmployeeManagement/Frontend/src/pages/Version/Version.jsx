@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import ResizableBackground from '../../components/ResizableBackground/ResizableBackground';
 import GitHubLink from '../../components/GitHubLink/GitHubLink';
+import ResizableBackground from '../../components/ResizableBackground/ResizableBackground';
 import DependenciesList from '../../components/DependenciesList/DependenciesList';
+import '../../styles/global.css';
 
 const Version = () => {
 
@@ -11,7 +12,7 @@ const Version = () => {
             <ResizableBackground />
             <GitHubLink filePath="pages/Version/Version.js" />
             <Helmet>
-                <title>Employee Manager - Web Site Information</title>
+                <title>Employee Management System - Web Site Information</title>
             </Helmet>
             <h1>Web Site Information</h1>
             <DependenciesList />

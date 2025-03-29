@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import GitHubLink from '../../components/GitHubLink/GitHubLink';
+import ResizableBackground from '../../components/ResizableBackground/ResizableBackground';
 import { getEmployees,  deleteEmployee } from '../../services/employeeService';
 import '../../styles/global.css';
-// import './DepartmentsPage.css'; // Import your CSS file for styling
 
 const EmployeesPage = ({ handleEdit = () => {}, refreshKey = () => {} }) => {
     const [employees, setEmployees] = useState([]);
@@ -35,6 +37,11 @@ const EmployeesPage = ({ handleEdit = () => {}, refreshKey = () => {} }) => {
 
     return (
         <div>
+            <ResizableBackground />
+            <GitHubLink filePath="pages/EmployeesPage/EmployeesPage.js" />
+            <Helmet>
+                <title>Employee Management System - Employee List</title>
+            </Helmet>
             <h2>Employee List</h2>
             <table className="table table-striped table-bordered table-hover">
                 <thead>
